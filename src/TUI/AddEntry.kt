@@ -36,7 +36,12 @@ class AddEntry(private var args: List<String>) {
 
     private fun createModeSel(modeSelArgs: String?) {
         when(modeSelArgs) {
-            "entry" -> createEntryMode()
+            "entry" -> {
+                if (!args.isEmpty())
+                    args = args.subList(1, args.size)
+
+                createEntryMode()
+            }
             "station" -> createStationMode()
             "location" -> createLocationMode()
             "help" -> addHelp()
@@ -50,7 +55,33 @@ class AddEntry(private var args: List<String>) {
 
     private fun createEntryMode() {
         // TODO: Implement add entry function
-        println("Creating new entry")
+
+        if (args.isEmpty()) {
+            println("Creating new entry")
+
+            print("date (YYYY-MM-DD): ") // will be today if empty
+            val dateInput = readlnOrNull()
+
+            print("station [{your last station}]: ")
+            val stationInput = readlnOrNull()
+
+            print("location [{your last location}]: ")
+            val locationInput = readlnOrNull()
+
+            print("task: ")
+            val taskInput = readlnOrNull()
+
+            println("Successfully added your entry")
+
+            print("Created new task for today with following entry: ")
+            println(taskInput)
+
+            return
+        }
+
+        print("Created new task for today with following entry: ")
+        println(args.first())
+
     }
 
     private fun createStationMode() {
