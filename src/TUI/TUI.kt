@@ -23,10 +23,12 @@ class TUI {
         // show: show all entries in a table
         //
 
-        when (readlnOrNull()) {
+        val input = readlnOrNull()?.split(" ")
+
+        when (input?.first()) {
             "?" -> help()
             "help" -> help() // TODO: Create help page
-            "add" -> add()
+            "add" -> AddEntry(input)
             "settings" -> settings()
             "clear" -> clear()
             "print" -> print()
@@ -40,11 +42,6 @@ class TUI {
             }
         }
         tui()
-    }
-
-    // TODO: Implement add command
-    private fun add() {
-        println("Adding a new element")
     }
 
     // TODO: Implement print command
