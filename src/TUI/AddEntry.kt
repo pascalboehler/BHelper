@@ -18,15 +18,7 @@ class AddEntry(private var args: List<String>) {
 
         isInteractiveMode = false
 
-        when (args.first()) {
-            "entry" -> {
-                args = args.subList(1, args.size)
-                createEntryMode()
-            }
-            "station" -> createStationMode()
-            "location" -> createLocationMode()
-            else -> println("NotImplementedException")
-        }
+        createModeSel(args.first())
     }
 
     private fun interactiveMode() {
@@ -48,6 +40,7 @@ class AddEntry(private var args: List<String>) {
             "station" -> createStationMode()
             "location" -> createLocationMode()
             "help" -> addHelp()
+            "?" -> addHelp()
             else -> {
                 println("Argument not found")
                 addHelp()
