@@ -55,10 +55,12 @@ class AddEntry(private var args: List<String>) {
 
     private fun createStationMode() {
         // TODO: Implement add station function
+        println("Adding a new station")
     }
 
     private fun createLocationMode() {
         // TODO: Implement add location function
+        println("Adding a new location")
     }
 
     private fun addHelp() {
