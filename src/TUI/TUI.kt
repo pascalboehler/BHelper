@@ -27,6 +27,7 @@ class TUI {
             "add" -> println("Adding new element")
             "settings" -> println("Settings page")
             "clear" -> println("Clearing the interface")
+            "print" -> println("Initializing print")
             "exit" -> return // MARK: Break condition for recursion!
             else -> {
                 println("Command not known")
@@ -36,16 +37,48 @@ class TUI {
         tui()
     }
 
+    // TODO: Implement add command
+    private fun add() {
+        println("Adding a new element")
+    }
+
+    // TODO: Implement print command
+    private fun print() {
+        println("")
+    }
+
+    // TODO: Implement show command
+    private fun show() {
+
+    }
+
+    // TODO: Implement importer
+    private fun import() {
+
+    }
+
+    // TODO: Implement signing
+    private fun sign() {
+
+    }
+
+    // TODO: Implement settigns
+    private fun settings() {
+
+    }
+
     private fun help() {
         println("BHelper v0.1")
         println("====")
         println("Help page - available commands")
-        println("====\n")
-        println("help: Shows this message")
+        println("====")
+        println("help: Shows this help message")
         println("add: Create a new entry")
-        println("settings: ")
         println("print: Generate printout for specified week")
         println("show: Show all stored entries")
-        println("\n====")
+        println("import: Import template or data from file")
+        println("sign: Send your Berichtsheft to your predefined signing provider")
+        println("settings: Change the settings of this app")
+        println("====")
     }
 }
