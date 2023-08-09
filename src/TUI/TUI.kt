@@ -26,9 +26,9 @@ class TUI {
         when (readlnOrNull()) {
             "?" -> help()
             "help" -> help() // TODO: Create help page
-            "add" -> println("Adding new element")
-            "settings" -> println("Settings page")
-            "clear" -> println("Clearing the interface")
+            "add" -> add()
+            "settings" -> settings()
+            "clear" -> clear()
             "print" -> println("Initializing print")
             "exit" -> return // MARK: Break condition for recursion!
             else -> {
@@ -46,26 +46,31 @@ class TUI {
 
     // TODO: Implement print command
     private fun print() {
-        println("")
+        println("Printing")
     }
 
     // TODO: Implement show command
     private fun show() {
-
+        println("Show")
     }
 
     // TODO: Implement importer
     private fun import() {
-
+        println("Import")
     }
 
     // TODO: Implement signing
     private fun sign() {
-
+        println("Sign")
     }
 
     // TODO: Implement settigns
     private fun settings() {
+        println("Settings")
+    }
+
+    // TODO: Implement clear
+    private fun clear() {
 
     }
 
@@ -80,6 +85,7 @@ class TUI {
         println("show: Show all stored entries")
         println("import: Import template or data from file")
         println("sign: Send your Models.Berichtsheft to your predefined signing provider")
+        println("clear: Clean up the prompt")
         println("settings: Change the settings of this app")
         println("====")
     }
