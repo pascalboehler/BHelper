@@ -28,7 +28,9 @@ class TUI {
         when (input?.first()) {
             "?" -> help()
             "help" -> help() // TODO: Create help page
-            "add" -> AddEntry(input)
+            "add" -> {
+                AddEntry(input.subList(1, input.size))
+            }
             "settings" -> settings()
             "clear" -> clear()
             "print" -> print()
