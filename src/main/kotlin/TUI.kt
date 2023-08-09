@@ -8,6 +8,7 @@ class TUI {
     private fun startupMessage() {
         println("Starting tui")
     }
+    
     private fun tui() {
         print("?> ")
 
@@ -34,7 +35,17 @@ class TUI {
         }
         tui()
     }
+
     private fun help() {
-        println("Help")
+        println("BHelper v0.1")
+        println("====")
+        println("Help page - available commands")
+        println("====\n")
+        println("help: Shows this message")
+        println("add: Create a new entry")
+        println("settings: ")
+        println("print: Generate printout for specified week")
+        println("show: Show all stored entries")
+        println("\n====")
     }
 }
