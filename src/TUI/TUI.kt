@@ -64,14 +64,14 @@ class TUI {
         println("Sign")
     }
 
-    // TODO: Implement settigns
+    // TODO: Implement settings
     private fun settings() {
         println("Settings")
     }
 
     // TODO: Implement clear
     private fun clear() {
-
+        println("Clearing")
     }
 
     private fun help() {
