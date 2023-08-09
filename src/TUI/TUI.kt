@@ -38,6 +38,7 @@ class TUI {
             "import" -> import()
             "sign" -> sign()
             "exit" -> return // MARK: Break condition for recursion!
+            "quit" -> terminate()
             else -> {
                 println("Command not known\n")
                 help()
