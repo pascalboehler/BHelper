@@ -1,7 +1,5 @@
 package TUI
 
-import kotlin.system.exitProcess
-
 class AddEntry(private var args: List<String>) {
     init {
         isInteractive()
