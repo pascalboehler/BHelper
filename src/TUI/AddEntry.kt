@@ -62,8 +62,22 @@ class AddEntry(private var args: List<String>) {
     }
 
     private fun addHelp() {
-        // TODO: Implement add help function
+        println("====")
+        println("Add help page - available commands")
+        println("====")
 
-        println("help me!!")
+        println("entry: Add a new entry")
+        println("station: Add a new work station")
+        println("location: Add a new work location")
+
+        println("help: Display this message")
+        println("?: Same as help")
+
+        if (isInteractiveMode) {
+            println("exit: Exit the current mode")
+            println("quit: Quit the application")
+        }
+
+        println("====")
     }
 }
