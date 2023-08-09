@@ -29,10 +29,13 @@ class TUI {
             "add" -> add()
             "settings" -> settings()
             "clear" -> clear()
-            "print" -> println("Initializing print")
+            "print" -> print()
+            "show" -> show()
+            "import" -> import()
+            "sign" -> sign()
             "exit" -> return // MARK: Break condition for recursion!
             else -> {
-                println("Command not known")
+                println("Command not known\n")
                 help()
             }
         }
