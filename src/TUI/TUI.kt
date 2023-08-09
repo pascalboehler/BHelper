@@ -1,3 +1,5 @@
+package TUI
+
 class TUI {
 
     init {
@@ -77,7 +79,7 @@ class TUI {
         println("print: Generate printout for specified week")
         println("show: Show all stored entries")
         println("import: Import template or data from file")
-        println("sign: Send your Berichtsheft to your predefined signing provider")
+        println("sign: Send your Models.Berichtsheft to your predefined signing provider")
         println("settings: Change the settings of this app")
         println("====")
     }
