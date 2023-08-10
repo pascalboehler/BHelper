@@ -38,7 +38,7 @@ class AddEntry(private var args: List<String>, private val dataHandler: DataHand
 
     private fun createModeSel(modeSelArgs: String?) {
         when(modeSelArgs) {
-            "entry" -> {
+            "task" -> {
                 if (!args.isEmpty())
                     args = args.subList(1, args.size)
 
@@ -56,10 +56,10 @@ class AddEntry(private var args: List<String>, private val dataHandler: DataHand
     }
 
     private fun createEntryMode() {
-        // TODO: Implement add entry function
+        // TODO: Implement add task function
 
         if (args.isEmpty()) {
-            println("Creating new entry")
+            println("Creating new task")
 
             print("date (YYYY-MM-DD): ") // will be today if empty
             val dateInput = readlnOrNull()
@@ -73,9 +73,9 @@ class AddEntry(private var args: List<String>, private val dataHandler: DataHand
             print("task: ")
             val taskInput = readlnOrNull()
 
-            println("Successfully added your entry")
+            println("Successfully added your task")
 
-            print("Created new task for today with following entry: ")
+            print("Created new task for today with following task: ")
             println(taskInput)
 
             dataHandler.createEntry()
@@ -84,7 +84,7 @@ class AddEntry(private var args: List<String>, private val dataHandler: DataHand
         }
 
         dataHandler.createEntry()
-        print("Created new task for today with following entry: ")
+        print("Created new task for today with following task: ")
         println(args.first())
 
     }
@@ -104,13 +104,11 @@ class AddEntry(private var args: List<String>, private val dataHandler: DataHand
         println("Add help page - available commands")
         println("====")
 
-        println("entry: Add a new entry")
+        println("task: Add a new task")
         println("station: Add a new work station")
         println("location: Add a new work location")
 
-        println("help: Display this message")
-        println("?: Same as help")
-
+        println("help, ?: Display this message")
         if (isInteractiveMode) {
             println("exit: Exit the current mode")
             println("quit: Quit the application")
