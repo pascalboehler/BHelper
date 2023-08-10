@@ -43,7 +43,7 @@ class TUI {
             "sign" -> sign()
             "exit" -> return // MARK: Break condition for recursion!
             "quit" -> terminate()
-            "" -> {}
+            "" -> {} // do nothing just go on
             else -> {
                 println("Command not known\n")
                 help()
