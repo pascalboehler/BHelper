@@ -1,8 +1,5 @@
 package dev.bembel
 
-import dev.bembel.plugins.configureDatabases
-import dev.bembel.plugins.configureRouting
-import dev.bembel.plugins.configureSerialization
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
@@ -13,8 +10,5 @@ fun main() {
 }
 
 fun Application.module() {
-    configureSerialization()
-    configureDatabases()
-    configureRouting()
     configureAlive()
 }
