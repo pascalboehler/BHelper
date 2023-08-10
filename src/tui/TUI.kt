@@ -1,4 +1,6 @@
-package TUI
+package tui
+
+import handlers.DataHandler
 
 import handlers.DataHandler
 

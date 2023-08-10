@@ -1,4 +1,4 @@
-package TUI
+package tui
 
 import kotlin.system.exitProcess
 

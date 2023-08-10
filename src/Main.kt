@@ -1,4 +1,4 @@
-import TUI.TUI
+import tui.TUI
 
 fun main() {
     println("BHelper")
