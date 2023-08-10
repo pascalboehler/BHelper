@@ -2,8 +2,6 @@ package tui
 
 import handlers.DataHandler
 
-import handlers.DataHandler
-
 class TUI {
 
     private val dataHandler: DataHandler = DataHandler()
