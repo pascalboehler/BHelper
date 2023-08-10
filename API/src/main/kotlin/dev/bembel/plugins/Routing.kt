@@ -11,7 +11,7 @@ fun Application.configureRouting() {
         }
 
         get("/hello-world") {
-            call.respondText("Huiii buhhh")
+            call.respondText("Hi there world, this is an api")
         }
     }
 }
