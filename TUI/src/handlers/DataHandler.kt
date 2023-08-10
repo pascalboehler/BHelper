@@ -6,13 +6,11 @@ class DataHandler {
     private val apiKey = "{API_KEY}" //  the API Key, will be set by .env file later
 
     init {
-        println(baseURL)
-        println(apiKey)
         helloWorld()
     }
 
     private fun helloWorld() {
-
+        println("I AM ALIVE")
     }
 
     fun createEntry() {

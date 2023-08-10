@@ -86,7 +86,7 @@ class TUI {
         println("====")
         println("Help page - available commands")
         println("====")
-        println("help: Shows this help message")
+        println("help, ?: Shows this help message")
         println("add: Create a new entry")
         println("print: Generate printout for specified week")
         println("show: Show all stored entries")
