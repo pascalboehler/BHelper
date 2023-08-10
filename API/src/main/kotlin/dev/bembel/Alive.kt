@@ -7,8 +7,7 @@ import io.ktor.server.routing.*
 
 fun Application.configureAlive() {
     routing {
-        val route = apiVersion + "/alive"
-        get (route) {
+        get ("$apiVersion/alive") {
             call.respondText("Hello world")
         }
     }
