@@ -1,6 +1,8 @@
 package TUI
 
-class AddEntry(private var args: List<String>) {
+import handlers.DataHandler
+
+class AddEntry(private var args: List<String>, private val dataHandler: DataHandler) {
 
     private var isInteractiveMode: Boolean = false
 
@@ -76,9 +78,12 @@ class AddEntry(private var args: List<String>) {
             print("Created new task for today with following entry: ")
             println(taskInput)
 
+            dataHandler.createEntry()
+
             return
         }
 
+        dataHandler.createEntry()
         print("Created new task for today with following entry: ")
         println(args.first())
 

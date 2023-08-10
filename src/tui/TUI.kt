@@ -1,6 +1,10 @@
 package TUI
 
+import handlers.DataHandler
+
 class TUI {
+
+    private val dataHandler: DataHandler = DataHandler()
 
     init {
         startupMessage()
@@ -29,7 +33,7 @@ class TUI {
             "?" -> help()
             "help" -> help() // TODO: Create help page
             "add" -> {
-                AddEntry(input.subList(1, input.size))
+                AddEntry(input.subList(1, input.size), dataHandler)
             }
             "settings" -> settings()
             "clear" -> clear()

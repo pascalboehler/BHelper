@@ -3,7 +3,7 @@ package TUI
 import kotlin.system.exitProcess
 
 internal fun terminate() {
-    print("Are you sure to exit (y/N)? ")
+    print("Are you sure you want to exit (y/N)? ")
     when(readlnOrNull()) {
         "y" -> {
             println("Halting")
