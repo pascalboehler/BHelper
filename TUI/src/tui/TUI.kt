@@ -16,8 +16,6 @@ class TUI {
     }
     
     private fun tui() {
-        print("?> ")
-
         //
         // which commands should be supported:
         // help: print all available commands
@@ -27,24 +25,23 @@ class TUI {
         // show: show all entries in a table
         //
         while (true) {
+            print("?> ")
+
             val input = readlnOrNull()?.split(" ")
 
             when (input?.first()) {
                 "?" -> help()
                 "help" -> help() // TODO: Create help page
-                "add" -> {
-                    AddEntry(input.subList(1, input.size), dataHandler)
-                }
-
+                "add" -> AddEntry(input.subList(1, input.size), dataHandler)
                 "settings" -> settings()
                 "clear" -> clear()
                 "print" -> print()
-                "show" -> show()
+                "show" -> ShowEntry(input.subList(1, input.size), dataHandler)
                 "import" -> import()
                 "sign" -> sign()
                 "exit" -> break // MARK: Break condition for recursion!
                 "quit" -> terminate()
-                "" -> {} // do nothing just go on
+                "" -> continue
                 else -> {
                     println("Command not known\n")
                     help()
