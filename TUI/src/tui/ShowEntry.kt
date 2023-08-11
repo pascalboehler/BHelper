@@ -57,19 +57,19 @@ internal class ShowEntry(private var args: List<String>?, private val dataHandle
                 if (args?.isEmpty() == false)
                     args = args?.size?.let { args?.subList(1, it) }
 
-                showTask()
+                showStation()
             }
             "pic" -> {
                 if (args?.isEmpty() == false)
                     args = args?.size?.let { args?.subList(1, it) }
 
-                showTask()
+                showPic()
             }
             "location" -> {
                 if (args?.isEmpty() == false)
                     args = args?.size?.let { args?.subList(1, it) }
 
-                showTask()
+                showLocation()
             }
             "all" -> {
                 if (args?.isEmpty() == false)
