@@ -134,6 +134,20 @@ internal class ShowEntry(private var args: List<String>?, private val dataHandle
     }
 
     private fun help() {
-        println("help me!")
+        println("====")
+        println("Show help page - available commands")
+        println("====")
+
+        println("task [all / . / {task_id}]: Show all tasks or selected task")
+        println("station [all / . / {station_id}]: Show all or selected station")
+        println("location [all / . / {station_id}]: Show all or selected location")
+
+        println("help, ?: Display this message")
+        if (isInteractiveMode) {
+            println("exit: Exit the current mode")
+            println("quit: Quit the application")
+        }
+
+        println("====")
     }
 }
