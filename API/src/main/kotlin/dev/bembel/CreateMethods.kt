@@ -7,7 +7,7 @@ import io.ktor.server.routing.*
 fun Application.configureCreateMethods() {
     routing {
         post ("$apiVersion/create/task") {
-
+            println("Created new task")
         }
 
         post ("$apiVersion/create/station") {

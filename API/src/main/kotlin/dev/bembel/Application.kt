@@ -11,4 +11,6 @@ fun main() {
 
 fun Application.module() {
     configureAlive()
+    configureCreateMethods()
+    configureGetMethods()
 }
