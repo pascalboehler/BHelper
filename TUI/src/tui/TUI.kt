@@ -26,30 +26,31 @@ class TUI {
         // print / export: same as create
         // show: show all entries in a table
         //
+        while (true) {
+            val input = readlnOrNull()?.split(" ")
 
-        val input = readlnOrNull()?.split(" ")
+            when (input?.first()) {
+                "?" -> help()
+                "help" -> help() // TODO: Create help page
+                "add" -> {
+                    AddEntry(input.subList(1, input.size), dataHandler)
+                }
 
-        when (input?.first()) {
-            "?" -> help()
-            "help" -> help() // TODO: Create help page
-            "add" -> {
-                AddEntry(input.subList(1, input.size), dataHandler)
-            }
-            "settings" -> settings()
-            "clear" -> clear()
-            "print" -> print()
-            "show" -> show()
-            "import" -> import()
-            "sign" -> sign()
-            "exit" -> return // MARK: Break condition for recursion!
-            "quit" -> terminate()
-            "" -> {} // do nothing just go on
-            else -> {
-                println("Command not known\n")
-                help()
+                "settings" -> settings()
+                "clear" -> clear()
+                "print" -> print()
+                "show" -> show()
+                "import" -> import()
+                "sign" -> sign()
+                "exit" -> break // MARK: Break condition for recursion!
+                "quit" -> terminate()
+                "" -> {} // do nothing just go on
+                else -> {
+                    println("Command not known\n")
+                    help()
+                }
             }
         }
-        tui()
     }
 
     // TODO: Implement print command

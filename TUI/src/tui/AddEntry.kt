@@ -24,16 +24,16 @@ class AddEntry(private var args: List<String>, private val dataHandler: DataHand
     }
 
     private fun interactiveMode() {
-        print("Item to add ?> ")
+        while (true) {
+            print("Item to add ?> ")
 
-        val input = readlnOrNull()?.split(" ")
-        when(val modeSel = input?.first()) {
-            "exit" -> return // MARK: Exit condition for recursive method
-            "quit" -> terminate()
-            else -> createModeSel(modeSel)
+            val input = readlnOrNull()?.split(" ")
+            when(val modeSel = input?.first()) {
+                "exit" -> break
+                "quit" -> terminate()
+                else -> createModeSel(modeSel)
+            }
         }
-
-        interactiveMode()
     }
 
     private fun createModeSel(modeSelArgs: String?) {
