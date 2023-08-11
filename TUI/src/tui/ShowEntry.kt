@@ -2,7 +2,7 @@ package tui
 
 import handlers.DataHandler
 
-internal class ShowEntry(var args: List<String>, val dataHandler: DataHandler) {
+internal class ShowEntry(private var args: List<String>, private val dataHandler: DataHandler) {
 
     private var isInteractiveMode: Boolean = false
 
