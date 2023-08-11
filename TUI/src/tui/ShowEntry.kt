@@ -2,7 +2,7 @@ package tui
 
 import handlers.DataHandler
 
-internal class ShowEntry(private var args: List<String>, private val dataHandler: DataHandler) {
+internal class ShowEntry(private var args: List<String>?, private val dataHandler: DataHandler) {
 
     private var isInteractiveMode: Boolean = false
 
@@ -11,7 +11,7 @@ internal class ShowEntry(private var args: List<String>, private val dataHandler
     }
 
     private fun showModeSel() {
-        if (args.isEmpty()) {
+        if (args?.isEmpty() == true) {
             isInteractiveMode = true
             interactiveMode()
             return
@@ -19,7 +19,7 @@ internal class ShowEntry(private var args: List<String>, private val dataHandler
 
         isInteractiveMode = false
 
-        modeSel(args.first())
+        modeSel(args?.first())
 
     }
 
@@ -27,22 +27,29 @@ internal class ShowEntry(private var args: List<String>, private val dataHandler
         while (true) {
             print("show ?> ")
 
-            when (val input = readlnOrNull()) {
+            val input = readlnOrNull()
+
+            val inputList = input?.split(" ")
+
+            args = inputList
+
+            when (val mode = args?.first()) {
                 "exit" -> break
                 "quit" -> terminate()
                 "" -> continue
-                else -> modeSel(input)
+                else -> modeSel(mode)
             }
         }
     }
 
     private fun modeSel(mode: String?) {
+
         when(mode) {
             "help" -> help()
             "?" -> help()
             "task" -> {
-                if (!args.isEmpty())
-                    args = args.subList(1, args.size)
+                if (args?.isEmpty() == false)
+                    args = args?.size?.let { args?.subList(1, it) }
 
                 showTask()
             }
@@ -59,6 +66,10 @@ internal class ShowEntry(private var args: List<String>, private val dataHandler
     }
 
     private fun showTask() {
+        if (args?.isEmpty() == true) {
+        } else {
+            println(args?.first())
+        }
         println("Task")
     }
 
