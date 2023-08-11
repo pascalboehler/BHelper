@@ -36,11 +36,16 @@ internal class ShowEntry(private var args: List<String>, private val dataHandler
         }
     }
 
-    private fun modeSel(args: String?) {
-        when(args) {
+    private fun modeSel(mode: String?) {
+        when(mode) {
             "help" -> help()
             "?" -> help()
-            "task" -> showTask()
+            "task" -> {
+                if (!args.isEmpty())
+                    args = args.subList(1, args.size)
+
+                showTask()
+            }
             "station" -> showStation()
             "pic" -> showPic()
             "location" -> showLocation()
