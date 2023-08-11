@@ -53,11 +53,36 @@ internal class ShowEntry(private var args: List<String>?, private val dataHandle
 
                 showTask()
             }
-            "station" -> showStation()
-            "pic" -> showPic()
-            "location" -> showLocation()
-            "all" -> showAll()
-            "." -> showAll()
+            "station" -> {
+                if (args?.isEmpty() == false)
+                    args = args?.size?.let { args?.subList(1, it) }
+
+                showTask()
+            }
+            "pic" -> {
+                if (args?.isEmpty() == false)
+                    args = args?.size?.let { args?.subList(1, it) }
+
+                showTask()
+            }
+            "location" -> {
+                if (args?.isEmpty() == false)
+                    args = args?.size?.let { args?.subList(1, it) }
+
+                showTask()
+            }
+            "all" -> {
+                if (args?.isEmpty() == false)
+                    args = args?.size?.let { args?.subList(1, it) }
+
+                showAll()
+            }
+            "." -> {
+                if (args?.isEmpty() == false)
+                    args = args?.size?.let { args?.subList(1, it) }
+
+                showAll()
+            }
             else -> {
                 println("Command unknown")
                 help()
@@ -65,31 +90,47 @@ internal class ShowEntry(private var args: List<String>?, private val dataHandle
         }
     }
 
-    private fun showTask() {
-        if (args?.isEmpty() == true) {
+    private fun showTask(getAll: Boolean = false) {
+        if (args?.isEmpty() == true || getAll || args?.first().equals("all") || args?.first().equals(".")) {
+            println("Fetching all data")
         } else {
             println(args?.first())
         }
         println("Task")
     }
 
-    private fun showStation() {
+    private fun showStation(getAll: Boolean = false) {
+        if (args?.isEmpty() == true || getAll || args?.first().equals("all") || args?.first().equals(".")) {
+            println("Fetching all data")
+        } else {
+            println(args?.first())
+        }
         println("Station")
     }
 
-    private fun showPic() {
+    private fun showPic(getAll: Boolean = false) {
+        if (args?.isEmpty() == true || getAll || args?.first().equals("all") || args?.first().equals(".")) {
+            println("Fetching all data")
+        } else {
+            println(args?.first())
+        }
         println("Person in charge")
     }
 
-    private fun showLocation() {
+    private fun showLocation(getAll: Boolean = false) {
+        if (args?.isEmpty() == true || getAll || args?.first().equals("all") || args?.first().equals(".")) {
+            println("Fetching all data")
+        } else {
+            println(args?.first())
+        }
         println("Location")
     }
 
     private fun showAll() {
-        showTask()
-        showLocation()
-        showStation()
-        showPic()
+        showTask(true)
+        showLocation(true)
+        showStation(true)
+        showPic(true)
     }
 
     private fun help() {
