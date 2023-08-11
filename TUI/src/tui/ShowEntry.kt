@@ -41,6 +41,11 @@ internal class ShowEntry(var args: List<String>, val dataHandler: DataHandler) {
             "help" -> help()
             "?" -> help()
             "task" -> showTask()
+            "station" -> showStation()
+            "pic" -> showPic()
+            "location" -> showLocation()
+            "all" -> showAll()
+            "." -> showAll()
             else -> {
                 println("Command unknown")
                 help()
@@ -50,6 +55,25 @@ internal class ShowEntry(var args: List<String>, val dataHandler: DataHandler) {
 
     private fun showTask() {
         println("Task")
+    }
+
+    private fun showStation() {
+        println("Station")
+    }
+
+    private fun showPic() {
+        println("Person in charge")
+    }
+
+    private fun showLocation() {
+        println("Location")
+    }
+
+    private fun showAll() {
+        showTask()
+        showLocation()
+        showStation()
+        showPic()
     }
 
     private fun help() {
