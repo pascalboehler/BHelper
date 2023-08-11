@@ -44,45 +44,17 @@ internal class ShowEntry(private var args: List<String>?, private val dataHandle
 
     private fun modeSel(mode: String?) {
 
+        if (args?.isEmpty() == false)
+            args = args?.size?.let { args?.subList(1, it) }
+
         when(mode) {
             "help" -> help()
             "?" -> help()
-            "task" -> {
-                if (args?.isEmpty() == false)
-                    args = args?.size?.let { args?.subList(1, it) }
-
-                showTask()
-            }
-            "station" -> {
-                if (args?.isEmpty() == false)
-                    args = args?.size?.let { args?.subList(1, it) }
-
-                showStation()
-            }
-            "pic" -> {
-                if (args?.isEmpty() == false)
-                    args = args?.size?.let { args?.subList(1, it) }
-
-                showPic()
-            }
-            "location" -> {
-                if (args?.isEmpty() == false)
-                    args = args?.size?.let { args?.subList(1, it) }
-
-                showLocation()
-            }
-            "all" -> {
-                if (args?.isEmpty() == false)
-                    args = args?.size?.let { args?.subList(1, it) }
-
-                showAll()
-            }
-            "." -> {
-                if (args?.isEmpty() == false)
-                    args = args?.size?.let { args?.subList(1, it) }
-
-                showAll()
-            }
+            "task" -> showTask()
+            "station" -> showStation()
+            "pic" -> showPic()
+            "location" -> showAll()
+            "." -> showAll()
             else -> {
                 println("Command unknown")
                 help()
